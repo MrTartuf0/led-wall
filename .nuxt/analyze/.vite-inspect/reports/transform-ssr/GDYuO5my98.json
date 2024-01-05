@@ -1,0 +1,288 @@
+{
+  "resolvedId": "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue?vue&type=style&index=0&scoped=92f982e0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n  .optionCircle{\r\n    border-radius: 100vw;\r\n    position: absolute;\r\n    width: 6rem;\r\n    height: 6em;\r\n    color: white;\r\n    user-select: none;\r\n  }\r\n  .optionCircle:hover{\r\n    cursor: pointer;\r\n  }\r\n\r\n  .deg36{\r\n    bottom: calc(200px * sin(36deg) - 3rem);\r\n    left: calc(200px * cos(36deg) - 3rem);\r\n  }\r\n  .deg72{\r\n    bottom: calc(200px * sin(72deg) - 3rem);\r\n    left: calc(200px * cos(72deg) - 3rem);\r\n  }\r\n  .deg108{\r\n    bottom: calc(200px * sin(108deg) - 3rem);\r\n    left: calc(200px * cos(108deg) - 3rem);\r\n  }\r\n  .deg144{\r\n    bottom: calc(200px * sin(144deg) - 3rem);\r\n    left: calc(200px * cos(144deg) - 3rem);\r\n  }\r\n\r\n",
+      "start": 1704355380525,
+      "end": 1704355380525,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue"
+        ],
+        "names": [],
+        "mappings": ";EAqGE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAClB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;IACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;IACX,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACnB;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACjB;;EAEA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACvC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EACvC;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACvC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EACvC;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACxC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EACxC;EACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;IACxC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;EACxC",
+        "file": "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"flex justify-center items-center min-h-screen w-full\">\r\n    <div id='0x0' class=\"group w-32 h-32 rounded-full bg-orange-400 flex items-center justify-center bg-black relative cursor-pointer\" @mousedown=\"holding('0x0')\" @mouseup=\"release('0x0')\">\r\n      <img class=\"absolute select-none\" draggable=\"false\" src=\"/freespirit.svg\" alt=\"\">\r\n      <!-- <div class=\"relative\"> -->\r\n        <div id='0x0options' class=\"relative block hidden\">\r\n        <div \r\n          @mouseup=\"changeColor('0', '0xFFA500')\"\r\n          class=\"optionCircle bg-[#FFA500] deg144\"\r\n        >\r\n          <img src=\"/start.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('0', '0x03FFFF')\"\r\n          class=\"optionCircle bg-[#03FFFF] deg108\"\r\n        >\r\n          <img src=\"/middle.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('0', '0xFF00FF')\"\r\n          class=\"optionCircle bg-[#FF00FF] deg72\"\r\n        >\r\n          <img src=\"/top.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('0', '0x0')\"\r\n          class=\"optionCircle bg-[#101112] deg36\"\r\n        >\r\n          <img src=\"/none.svg\">\r\n        </div>\r\n\r\n      </div>\r\n    </div>\r\n    <div class=\"group w-32 h-32  bg-orange-400 flex items-center justify-center bg-white relative cursor-pointer\">\r\n      <img class=\"absolute select-none\" draggable=\"false\" alt=\"\">\r\n    </div>\r\n    <div id='0x1' class=\"group w-32 h-32 rounded-full bg-orange-400 flex items-center justify-center bg-black relative cursor-pointer\" @mousedown=\"holding('0x1')\" @mouseup=\"release('0x1')\">\r\n      <img class=\"absolute select-none\" draggable=\"false\" src=\"/freespirit.svg\" alt=\"\">\r\n      <!-- <div class=\"relative\"> -->\r\n      <div id='0x1options' class=\"relative block hidden\">\r\n        <div \r\n          @mouseup=\"changeColor('1', '0xFFA500')\"\r\n          class=\"optionCircle bg-[#FFA500] deg144\"\r\n        >\r\n          <img src=\"/start.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('1', '0x03FFFF')\"\r\n          class=\"optionCircle bg-[#03FFFF] deg108\"\r\n        >\r\n          <img src=\"/middle.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('1', '0xFF00FF')\"\r\n          class=\"optionCircle bg-[#FF00FF] deg72\"\r\n        >\r\n          <img src=\"/top.svg\">\r\n        </div>\r\n        \r\n        <div \r\n          @mouseup=\"changeColor('1', '0x0')\"\r\n          class=\"optionCircle bg-[#101112] deg36\"\r\n        >\r\n          <img src=\"/none.svg\">\r\n        </div>\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\n\r\nconst isHolding = ref(false)\r\n\r\nconst distance = ref('200px')\r\nconst radius = ref('3rem')\r\n\r\nfunction holding(ledpointed){\r\n  console.log('holding!' + ledpointed);\r\n  document.getElementById(ledpointed + 'options').classList.remove('hidden');\r\n}\r\nfunction release(ledpointed){\r\n  console.log('realising!');\r\n  document.getElementById(ledpointed + 'options').classList.add('hidden');\r\n}\r\n\r\nasync function changeColor(lednumber, color){\r\n  console.log('The led numer ' + lednumber + ' color has changed to ' + color);\r\n  const change = await useFetch('http://192.168.1.94:3000/changeColor/'+ lednumber + '/' + color)\r\n}\r\n\r\n</script>\r\n\r\n\r\n<style scoped>\r\n  .optionCircle{\r\n    border-radius: 100vw;\r\n    position: absolute;\r\n    width: 6rem;\r\n    height: 6em;\r\n    color: white;\r\n    user-select: none;\r\n  }\r\n  .optionCircle:hover{\r\n    cursor: pointer;\r\n  }\r\n\r\n  .deg36{\r\n    bottom: calc(200px * sin(36deg) - 3rem);\r\n    left: calc(200px * cos(36deg) - 3rem);\r\n  }\r\n  .deg72{\r\n    bottom: calc(200px * sin(72deg) - 3rem);\r\n    left: calc(200px * cos(72deg) - 3rem);\r\n  }\r\n  .deg108{\r\n    bottom: calc(200px * sin(108deg) - 3rem);\r\n    left: calc(200px * cos(108deg) - 3rem);\r\n  }\r\n  .deg144{\r\n    bottom: calc(200px * sin(144deg) - 3rem);\r\n    left: calc(200px * cos(144deg) - 3rem);\r\n  }\r\n\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1704355380526,
+      "end": 1704355380526,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1704355380526,
+      "end": 1704355380526,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1704355380526,
+      "end": 1704355380526,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1704355380526,
+      "end": 1704355380526,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1704355380526,
+      "end": 1704355380526,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".optionCircle{border-radius:100vw;color:#fff;height:6em;position:absolute;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:6rem}.optionCircle:hover{cursor:pointer}.deg36{bottom:calc(200px*sin(36deg) - 3rem);left:calc(200px*cos(36deg) - 3rem)}.deg72{bottom:calc(200px*sin(72deg) - 3rem);left:calc(200px*cos(72deg) - 3rem)}.deg108{bottom:calc(200px*sin(108deg) - 3rem);left:calc(200px*cos(108deg) - 3rem)}.deg144{bottom:calc(200px*sin(144deg) - 3rem);left:calc(200px*cos(144deg) - 3rem)}",
+      "start": 1704355380526,
+      "end": 1704355380530,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue",
+        "mappings": "AACE,cACE,mBAAoB,CAIpB,UAAY,CADZ,UAAW,CAFX,iBAAkB,CAIlB,wBAAiB,CAAjB,qBAAiB,CAAjB,gBAAiB,CAHjB,UAIF,CACA,oBACE,cACF,CAEA,OACE,oCAAuC,CACvC,kCACF,CACA,OACE,oCAAuC,CACvC,kCACF,CACA,QACE,qCAAwC,CACxC,mCACF,CACA,QACE,qCAAwC,CACxC,mCACF",
+        "names": [],
+        "sources": [
+          "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue"
+        ],
+        "sourcesContent": [
+          "\r\n  .optionCircle{\r\n    border-radius: 100vw;\r\n    position: absolute;\r\n    width: 6rem;\r\n    height: 6em;\r\n    color: white;\r\n    user-select: none;\r\n  }\r\n  .optionCircle:hover{\r\n    cursor: pointer;\r\n  }\r\n\r\n  .deg36{\r\n    bottom: calc(200px * sin(36deg) - 3rem);\r\n    left: calc(200px * cos(36deg) - 3rem);\r\n  }\r\n  .deg72{\r\n    bottom: calc(200px * sin(72deg) - 3rem);\r\n    left: calc(200px * cos(72deg) - 3rem);\r\n  }\r\n  .deg108{\r\n    bottom: calc(200px * sin(108deg) - 3rem);\r\n    left: calc(200px * cos(108deg) - 3rem);\r\n  }\r\n  .deg144{\r\n    bottom: calc(200px * sin(144deg) - 3rem);\r\n    left: calc(200px * cos(144deg) - 3rem);\r\n  }\r\n\r\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".optionCircle[data-v-92f982e0]{border-radius:100vw;color:#fff;height:6em;position:absolute;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:6rem}.optionCircle[data-v-92f982e0]:hover{cursor:pointer}.deg36[data-v-92f982e0]{bottom:calc(200px*sin(36deg) - 3rem);left:calc(200px*cos(36deg) - 3rem)}.deg72[data-v-92f982e0]{bottom:calc(200px*sin(72deg) - 3rem);left:calc(200px*cos(72deg) - 3rem)}.deg108[data-v-92f982e0]{bottom:calc(200px*sin(108deg) - 3rem);left:calc(200px*cos(108deg) - 3rem)}.deg144[data-v-92f982e0]{bottom:calc(200px*sin(144deg) - 3rem);left:calc(200px*cos(144deg) - 3rem)}",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue",
+        "mappings": "AAAA,+BAAc,mBAAmB,CAAC,UAAU,CAAC,UAAU,CAAC,iBAAiB,CAAC,wBAAwB,CAAC,qBAAqB,CAAC,gBAAgB,CAAC,UAAU,CAAC,qCAAoB,cAAc,CAAC,wBAAO,oCAAoC,CAAC,kCAAkC,CAAC,wBAAO,oCAAoC,CAAC,kCAAkC,CAAC,yBAAQ,qCAAqC,CAAC,mCAAmC,CAAC,yBAAQ,qCAAqC,CAAC,mCAAmC",
+        "names": [],
+        "sources": [
+          "C:/Users/unghi/Documents/GitHub/led-wall/pages/index.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1704355380530,
+      "end": 1704355380530,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1704355380530,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1704355380531,
+      "end": 1704355380531,
+      "order": "normal"
+    }
+  ]
+}
