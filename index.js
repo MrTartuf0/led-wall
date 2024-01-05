@@ -6,7 +6,7 @@ const app = express()
 app.use(cors())
 const port = 3000
 
-const channel = ws281x(2 , {stripType: 'ws2812'})
+const channel = ws281x(60 , {stripType: 'ws2812'})
 
 app.get('/changeColor/:lednumber/:color' , (req , res) => {
     channel.array[req.params.lednumber] = req.params.color
