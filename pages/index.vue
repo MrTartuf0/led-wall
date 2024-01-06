@@ -59,7 +59,7 @@ function release(){
 
 async function changeColor(color){
   console.log('sup the color has changed to ' + color);
-  const change = await useFetch('http://192.168.178.51:3000/changeColor/' + color)
+  const change = await useFetch('https://192.168.178.51:3000/changeColor/' + color)
 }
 
 </script>
