@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     colors:{
       magenta: '#EE00EE',
+      green: '#66CC66',
       black: '#000000',
       white: '#ffffff',
       cyan: '#03FFFF',
