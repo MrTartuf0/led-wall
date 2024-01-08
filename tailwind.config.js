@@ -14,11 +14,16 @@ module.exports = {
       green: '#66CC66',
       black: '#000000',
       white: '#ffffff',
+      gray: '#a0a0a0',
       cyan: '#03FFFF',
       yellow: '#FFA500',
       none: '#101112',
     },
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        '24': 'repeat(24, minmax(0, 1fr))',
+      }
+    },
   },
   plugins: [],
 }

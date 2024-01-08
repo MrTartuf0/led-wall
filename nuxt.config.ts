@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   modules: ['@nuxtjs/ionic'],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
   ionic: {
     integrations: {
