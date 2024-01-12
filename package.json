@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@capacitor/cli": "5.6.0",
     "@nuxtjs/ionic": "^0.12.1",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.9.0",
@@ -17,5 +18,12 @@
     "tailwindcss": "^3.4.0",
     "vue": "^3.4.3",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@capacitor/app": "5.0.6",
+    "@capacitor/core": "5.6.0",
+    "@capacitor/haptics": "5.0.6",
+    "@capacitor/keyboard": "5.0.7",
+    "@capacitor/status-bar": "5.0.6"
   }
 }
