@@ -3,27 +3,19 @@
     <ion-router-outlet />
     <ion-content >
 
-      <!-- <p>Selected color is: {{ selectedColor }}</p> -->
-      <!-- <p>Selected hold is: {{ selectedHold }}</p> -->
-      <!-- <p>IsModalOpen: {{ isModalOpen }}</p> -->
-      <!-- {{ prova }} -->
-      <!-- <p>{{ holds }}</p> -->
+      <button @click="sendJson()">Send</button>
 
       <div :style="gridStyle" class="grid gap-2 p-4">
         <div v-for="index in (template.rows * template.columns)" @click="selectHold(index)">
-          <div class="flex items-center justify-center rounded-full hold bg-gray ring-offset-2"
+          <div class="flex items-center justify-center rounded-full hold bg-gray ring-offset-2 ring-2"
             :class="{
-              'ring-2': holds.some((hold) => hold.id+1 === index),
-             
+              'ring-0': !holds.has(index-1),
+              'ring-cyan': shouldApplyRing(index-1, '0x03FFFF'),
+              'ring-green': shouldApplyRing(index-1, '0x66CC66'),
+              'ring-yellow': shouldApplyRing(index-1, '0xFFA500'),
+              'ring-magenta': shouldApplyRing(index-1, '0xFF00FF'),
             }"  
           >
-<!--  
-              'ring-cyan': shouldApplyRing(index, '0x03FFFF'),
-              'ring-green': shouldApplyRing(index, '0x66CC66'),
-              'ring-yellow': shouldApplyRing(index, '0xFFA500'),
-              'ring-magenta': shouldApplyRing(index, '0xEE00EE'), -->
-
-
             <div class="w-1/5 h-1/5 bg-white rounded-full"></div>
           </div>
         </div>
@@ -81,35 +73,12 @@ const template = {
   columns: 12,
 }
 
-// const prova = ref({
-  // 42: '0xff00ff'
-// })
-
-const colors = {
-  foot: {
-    colorName: 'green',
-    colorCode: '0x66CC66',
-  },
-  start: {
-    colorName: 'yellow',
-    colorCode: '0xFFA500'
-  },
-  middle: {
-    colorName: 'cyan',
-    colorCode: '0x03FFFF'
-  },
-  top: {
-    colorName: 'magenta',
-    colorCode: '0xFF00FF'
-  }
-}
-
 const gridStyle = {
   gridTemplateRows: `repeat(${template.rows}, minmax(0, 1fr))`,
   gridTemplateColumns: `repeat(${template.columns}, minmax(0, 1fr))`,
 };
 
-const holds = ref([]);
+const holds = ref(new Map());
 
 const isModalOpen = ref(false)
 
@@ -124,43 +93,21 @@ function selectHold(hold) {
 function changeColor(color) {
   selectedColor.value = color
   isModalOpen.value = false
-
-  addObjectOrUpdate({ id: selectedHold.value, color: selectedColor.value })
-}
-
-function addObjectOrUpdate(newObject) {
-  const existingIndex = holds.value.findIndex(obj => obj.id === newObject.id);
-
-  if (existingIndex !== -1) {
-    // Modify existing object with the new properties
-    holds.value[existingIndex] = { ...holds.value[existingIndex], ...newObject };
-    console.log(`Updated object with id ${newObject.id}`);
-  } else {
-    // Add the new object if no duplicate id is found
-    holds.value.push(newObject);
-    console.log(`Added object with id ${newObject.id}`);
-  }
+  holds.value.set(selectedHold.value , selectedColor.value)
 }
 
 function removeColor() {
   isModalOpen.value = false
-
-  const indexToRemove = holds.value.findIndex(obj => obj.id === selectedHold.value);
-
-  if (indexToRemove !== -1) {
-    // Remove the object from the array
-    holds.value.splice(indexToRemove, 1);
-    console.log(`Removed object with id ${selectedHold.value}`);
-  } else {
-    console.log(`Object with id ${selectedHold.value} not found`);
-  }
+  holds.value.delete(selectedHold.value)
 }
 
-// function shouldApplyRing(index, targetColor) {
-  // console.log(index , targetColor);
-  // const sup = holds.value.find((hold) => hold.id === index);
-  // return sup ? sup.color === targetColor : false;
-// }
+function shouldApplyRing(index, targetColor) {
+  return holds.value.get(index) === targetColor;
+}
+
+function sendJson(){
+  console.log(Object.fromEntries(holds.value));
+}
 
 </script>
 
