@@ -1,20 +1,16 @@
 <template>
   <ion-page>
     <ion-content>
-      {{ holds }}
-
-      <ion-button @click="sendJson()">Send</ion-button>
-      <ion-button router-link="/2x3">2x3</ion-button>
-
-      <div :style="gridStyle" class="grid gap-2 p-4">
+      <div :style="gridStyle" class="grid gap-4 p-4">
         <div
           v-for="index in template.rows * template.columns"
           @click="selectHold(index)"
           :key="index"
+          class="flex items-center justify-center "
         >
           <div
-            ref="myhold"
-            class="flex items-center justify-center rounded-full hold bg-gray ring-offset-2 ring-2 ring-white"
+            ref="DOMholds"
+            class="flex items-center justify-center rounded-full hold bg-gray ring-offset-4 ring-4 ring-white"
           >
             <div class="w-1/5 h-1/5 bg-white rounded-full"></div>
           </div>
@@ -48,15 +44,20 @@
           </div>
         </div>
       </ion-modal>
+      
+      <p>{{ holds }}</p>
+      <ion-button router-link="/">go back</ion-button>
+      <ion-button @click="clearBoard()">clear board</ion-button>
+      <ion-button @click="sendJson()">send</ion-button>
+
     </ion-content>
   </ion-page>
 </template>
 
 <script setup>
-
 const template = {
-  rows: 24,
-  columns: 12,
+  rows: 3,
+  columns: 2,
 };
 
 const ringColors = {
@@ -72,7 +73,7 @@ const gridStyle = {
   gridTemplateColumns: `repeat(${template.columns}, minmax(0, 1fr))`,
 };
 
-const myhold = ref();
+const DOMholds = ref();
 const holds = ref(new Map());
 
 const isModalOpen = ref(false);
@@ -89,40 +90,60 @@ function changeColor(color) {
   selectedColor.value = color;
   isModalOpen.value = false;
   holds.value.set(selectedHold.value, selectedColor.value);
-
-  // console.log(selectedHold.value);
-  myhold.value[selectedHold.value].classList.remove(
+  DOMholds.value[selectedHold.value].classList.remove(
     "ring-white",
     "ring-cyan",
     "ring-green",
     "ring-yellow",
     "ring-magenta"
   );
-  myhold.value[selectedHold.value].classList.add(ringColors[color]);
+  DOMholds.value[selectedHold.value].classList.add(ringColors[color]);
 }
 
 function removeColor() {
   isModalOpen.value = false;
-  myhold.value[selectedHold.value].classList.remove(
+  DOMholds.value[selectedHold.value].classList.remove(
     "ring-white",
     "ring-cyan",
     "ring-green",
     "ring-yellow",
     "ring-magenta"
   );
-  myhold.value[selectedHold.value].classList.add("ring-white");
+  DOMholds.value[selectedHold.value].classList.add("ring-white");
   holds.value.delete(selectedHold.value);
 }
 
-function sendJson() {
-  console.log(Object.fromEntries(holds.value));
+async function clearBoard() {
+  holds.value.clear();
+  DOMholds.value.forEach((hold) => {
+    hold.classList.remove(
+      "ring-white",
+      "ring-cyan",
+      "ring-green",
+      "ring-yellow",
+      "ring-magenta"
+    );
+    hold.classList.add("ring-white");
+  });
+  await fetch("https://192.168.178.51:3000/clearBoard");
+}
+
+async function sendJson() {
+  console.log(JSON.stringify(Object.fromEntries(holds.value)));
+  await fetch("https://192.168.178.51:3000/lightUpBoard", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(Object.fromEntries(holds.value)),
+  });
 }
 </script>
 
 <style>
 .hold {
-  height: calc((100vw - 2rem) / 16);
-  width: calc((100vw - 2rem) / 16);
+  height: calc((100vw - 2rem) / 6);
+  width: calc((100vw - 2rem) / 6);
 }
 
 .optionCircle {
