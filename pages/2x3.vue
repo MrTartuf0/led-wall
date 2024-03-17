@@ -6,7 +6,7 @@
           v-for="index in template.rows * template.columns"
           @click="selectHold(index)"
           :key="index"
-          class="flex items-center justify-center "
+          class="flex items-center justify-center"
         >
           <div
             ref="DOMholds"
@@ -44,17 +44,27 @@
           </div>
         </div>
       </ion-modal>
-      
+
       <p>{{ holds }}</p>
       <ion-button router-link="/">go back</ion-button>
       <ion-button @click="clearBoard()">clear board</ion-button>
       <ion-button @click="sendJson()">send</ion-button>
 
+      <div class="flex">
+        <ion-input
+          v-model="myURL"
+          placeholder="Put the URL to fetch..."
+        ></ion-input>
+        <ion-button @click="fetchURL()">Fetch</ion-button>
+      </div>
+      <p>{{ myResponse }}</p>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup>
+import { CapacitorHttp } from "@capacitor/core";
+
 const template = {
   rows: 3,
   columns: 2,
@@ -72,6 +82,24 @@ const gridStyle = {
   gridTemplateRows: `repeat(${template.rows}, minmax(0, 1fr))`,
   gridTemplateColumns: `repeat(${template.columns}, minmax(0, 1fr))`,
 };
+
+const baseURL = "http://192.168.178.51:3000";
+
+const myURL = ref(baseURL);
+const myResponse = ref();
+async function fetchURL() {
+  try {
+    const response = await CapacitorHttp.request({
+      method: "GET",
+      url: myURL.value,
+    });
+
+    console.log(response);
+    myResponse.value = response;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
 
 const DOMholds = ref();
 const holds = ref(new Map());
@@ -125,18 +153,37 @@ async function clearBoard() {
     );
     hold.classList.add("ring-white");
   });
-  await fetch("https://192.168.178.51:3000/clearBoard");
+  // await fetch(baseURL + "/clearBoard");
+  try {
+    const response = await CapacitorHttp.request({
+      method: "GET",
+      url: baseURL + "/clearBoard",
+    });
+
+    console.log(response);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
 
 async function sendJson() {
-  console.log(JSON.stringify(Object.fromEntries(holds.value)));
-  await fetch("https://192.168.178.51:3000/lightUpBoard", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(Object.fromEntries(holds.value)),
-  });
+  try {
+    const holdsData = Object.fromEntries(holds.value);
+    console.log(JSON.stringify(holdsData));
+
+    const response = await CapacitorHttp.request({
+      method: "POST",
+      url: baseURL + "/lightUpBoard",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(holdsData),
+    });
+
+    console.log(response);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
 </script>
 
