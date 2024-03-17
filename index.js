@@ -1,17 +1,14 @@
-import express from "express";
-import cors from "cors";
-import https from "https";
 import ws281x from 'rpi-ws281x-native'
+import express from "express";
+import https from "https";
+import cors from "cors";
+import http from 'http';
 import fs from 'fs'
-
-const key = fs.readFileSync('./cert/localhost/localhost.decrypted.key')
-const cert = fs.readFileSync('./cert/localhost/localhost.cr')
-
+import ip from 'ip'
 
 const app = express()
 app.use(cors())
 app.use(express.json())
-const port = 3000
 
 const channel = ws281x(1 , {stripType: 'ws2812'})
 
@@ -37,8 +34,8 @@ app.get('/changeColor/:color' , (req , res) => {
 })
 
 app.post('/lightUpBoard', (req, res) => {
-    ws281x.reset()
     console.log(req.body);
+    ws281x.reset()
     try {
         const doubledLEDObject = doubleLEDs(req.body);
          for (let ledIndex in doubledLEDObject) {
@@ -64,7 +61,20 @@ app.get('/clearBoard', (req, res) => {
     }
 });
 
-const server = https.createServer({ key, cert }, app)
-server.listen(port, () => {
-    console.log(`Server is listening on https://localhost:${port}`)
-})            
+const httpsOptions = {
+    key: fs.readFileSync('./cert/localhost/localhost.decrypted.key'),
+    cert: fs.readFileSync('./cert/localhost/localhost.cr')
+};    
+
+
+const httpsPort = 4000
+const httpsServer = https.createServer(httpsOptions, app);
+httpsServer.listen(httpsPort, () => {
+  console.log(`HTTPS is listening on https://${ip.address()}:${httpsPort}`)
+});
+
+const httpPort = 3000
+const httpServer = http.createServer(app);
+httpServer.listen(httpPort, () => {
+  console.log(`HTTP is listening on http://${ip.address()}:${httpPort}`)
+});
