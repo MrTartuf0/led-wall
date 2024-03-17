@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package nuxt.app;
 
 import com.getcapacitor.BridgeActivity;
 

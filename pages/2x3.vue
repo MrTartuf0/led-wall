@@ -1,9 +1,10 @@
 <template>
-  <ion-app>
+  <ion-page>
     <ion-content>
       {{ holds }}
 
       <ion-button @click="sendJson()">Send</ion-button>
+      <ion-button router-link="/2x3">2x3</ion-button>
 
       <div :style="gridStyle" class="grid gap-2 p-4">
         <div
@@ -12,14 +13,8 @@
           :key="index"
         >
           <div
+            ref="myhold"
             class="flex items-center justify-center rounded-full hold bg-gray ring-offset-2 ring-2 ring-white"
-            :class="{
-              'ring-0': !holds.has(index - 1),
-              'ring-cyan': shouldApplyRing(index - 1, '0x03FFFF'),
-              'ring-green': shouldApplyRing(index - 1, '0x66CC66'),
-              'ring-yellow': shouldApplyRing(index - 1, '0xFFA500'),
-              'ring-magenta': shouldApplyRing(index - 1, '0xFF00FF'),
-            }"
           >
             <div class="w-1/5 h-1/5 bg-white rounded-full"></div>
           </div>
@@ -48,21 +43,28 @@
             <img src="/top.svg" />
           </div>
 
-          <div @click="removeColor()" class="optionCircle bg-[#101112]">
+          <div @click="removeColor()" class="optionCircle bg-none">
             <img src="/none.svg" />
           </div>
         </div>
       </ion-modal>
     </ion-content>
-  </ion-app>
+  </ion-page>
 </template>
 
 <script setup>
-import { IonModal, IonContent } from "@ionic/vue";
 
 const template = {
   rows: 24,
   columns: 12,
+};
+
+const ringColors = {
+  "0x66CC66": "ring-green",
+  "0xFFA500": "ring-yellow",
+  "0x03FFFF": "ring-cyan",
+  "0xFF00FF": "ring-magenta",
+  "0x101112": "ring-white",
 };
 
 const gridStyle = {
@@ -70,6 +72,7 @@ const gridStyle = {
   gridTemplateColumns: `repeat(${template.columns}, minmax(0, 1fr))`,
 };
 
+const myhold = ref();
 const holds = ref(new Map());
 
 const isModalOpen = ref(false);
@@ -78,7 +81,6 @@ const selectedHold = ref();
 const selectedColor = ref();
 
 function selectHold(hold) {
-  console.log("ciao" + hold);
   selectedHold.value = hold - 1;
   isModalOpen.value = true;
 }
@@ -87,16 +89,29 @@ function changeColor(color) {
   selectedColor.value = color;
   isModalOpen.value = false;
   holds.value.set(selectedHold.value, selectedColor.value);
+
+  // console.log(selectedHold.value);
+  myhold.value[selectedHold.value].classList.remove(
+    "ring-white",
+    "ring-cyan",
+    "ring-green",
+    "ring-yellow",
+    "ring-magenta"
+  );
+  myhold.value[selectedHold.value].classList.add(ringColors[color]);
 }
 
 function removeColor() {
   isModalOpen.value = false;
+  myhold.value[selectedHold.value].classList.remove(
+    "ring-white",
+    "ring-cyan",
+    "ring-green",
+    "ring-yellow",
+    "ring-magenta"
+  );
+  myhold.value[selectedHold.value].classList.add("ring-white");
   holds.value.delete(selectedHold.value);
-}
-
-function shouldApplyRing(index, targetColor) {
-  console.log(index , targetColor);
-  return holds.value.get(index) === targetColor;
 }
 
 function sendJson() {

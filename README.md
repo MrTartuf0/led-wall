@@ -1,6 +1,3 @@
-# led-wall web-app ✨
-![my-home-gym-kilter-board-homewall-fullride-10x12-adjustable-v0-lf4tjudvbya91](https://github.com/MrTartuf0/led-wall/assets/79630556/270c21b5-bd0e-4841-a13f-d5737e556b3b)
-
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

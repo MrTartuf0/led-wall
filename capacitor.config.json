@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "nuxt.app",
   "appName": "nuxt-app",
   "webDir": "dist",
   "server": {

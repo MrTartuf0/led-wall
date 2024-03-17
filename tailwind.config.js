@@ -19,11 +19,6 @@ module.exports = {
       yellow: '#FFA500',
       none: '#101112',
     },
-    extend: {
-      gridTemplateRows: {
-        '24': 'repeat(24, minmax(0, 1fr))',
-      }
-    },
   },
   plugins: [],
 }
