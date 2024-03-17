@@ -23,7 +23,7 @@ Installare le dipendenze necessarie
 npm i  
 ```
 
-Eseguire il webserver express per il controllo dei led
+Eseguire il lo script node.js per il controllo dei led
 
 ```bash
 sudo node httpOnly.js  
