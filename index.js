@@ -37,6 +37,7 @@ app.get('/changeColor/:color' , (req , res) => {
 })
 
 app.post('/lightUpBoard', (req, res) => {
+    ws281x.reset()
     console.log(req.body);
     try {
         const doubledLEDObject = doubleLEDs(req.body);
