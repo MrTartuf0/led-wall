@@ -1,75 +1,23 @@
-# Nuxt 3 Minimal Starter
+# led-wall web-app ✨
+![image](https://github.com/MrTartuf0/led-wall/assets/79630556/14b511a0-584d-44bd-bdb6-145aa6714be9)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Come configurare l'app led-wall
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Clonare questa repository 
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+git clone https://github.com/MrTartuf0/led-wall.git
+cd led-wall
 ```
 
-## Production
-
-Build the application for production:
+Installare le dipendenze necessarie
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm i  
 ```
 
-Locally preview production build:
+Eseguire la web-app in modalità development
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+npm run dev  
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
