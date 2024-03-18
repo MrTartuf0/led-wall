@@ -46,7 +46,7 @@
       </ion-modal>
 
       <p>{{ holds }}</p>
-      <ion-button router-link="/">go back</ion-button>
+      <ion-button router-link="/" router-direction="back">go back</ion-button>
       <ion-button @click="clearBoard()">clear board</ion-button>
       <ion-button @click="sendJson()">send</ion-button>
 

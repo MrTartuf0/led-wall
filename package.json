@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "led-wall",
   "private": true,
   "type": "module",
   "scripts": {
@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@nuxtjs/ionic": "^0.13.1",
+    "@vite-pwa/assets-generator": "^0.2.4",
+    "@vite-pwa/nuxt": "^0.6.0",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"

@@ -5,6 +5,7 @@
 
       <ion-button @click="sendJson()">Send</ion-button>
       <ion-button router-link="/2x3">2x3</ion-button>
+      <ion-button router-link="/pwa">pwaTest</ion-button>
 
       <div :style="gridStyle" class="grid gap-2 p-4">
         <div
