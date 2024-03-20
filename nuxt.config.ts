@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  // ssr: false,
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   modules: ["@nuxtjs/ionic", "@vite-pwa/nuxt"],
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
       name: "LedWall - Free Spirit",
       description: "An app to control the led wall",
       theme_color: '#ff6909',
-      background_color: '#23a7e4',
-      // background_color: '#ff6909',
+      background_color: '#ff6909',
+      // background_color: '#23a7e4',
       icons: [
         {
           src: "icons/pwa-64x64.png",
@@ -47,20 +47,25 @@ export default defineNuxtConfig({
         },
       ],
     },
-    client: {
-      installPrompt: true,
-    },
-    registerWebManifestInRouteRules: true,
     devOptions: {
       enabled: true,
-      navigateFallbackAllowlist: [/^\/$/],
     },
-    registerType: "autoUpdate",
   },
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  ionic: {
+    integrations: {
+      pwa: false,
+    },
+    css: {
+      //
+    },
+    config: {
+      //
+    }
   },
 })
