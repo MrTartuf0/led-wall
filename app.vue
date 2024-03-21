@@ -1,6 +1,6 @@
 <template>
   <ion-app>
-    <VitePwaManifest />
+    <NuxtPwaManifest />
     <ion-router-outlet />
   </ion-app>  
 </template>

@@ -1,3 +1,7 @@
+<script setup>
+  const { $pwa } = useNuxtApp();
+</script>
+
 <template>
   <ion-page>
     <ion-content>

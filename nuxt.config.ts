@@ -1,14 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false,
+  ssr: false,
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   modules: ["@nuxtjs/ionic", "@vite-pwa/nuxt"],
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag) => ['VitePwaManifest'].includes(tag),
-    },
-  },
   pwa: {
     manifest: {
       short_name: "LedWall",
@@ -16,6 +11,7 @@ export default defineNuxtConfig({
       description: "An app to control the led wall",
       theme_color: '#ff6909',
       background_color: '#ff6909',
+      start_url: '/',
       // background_color: '#23a7e4',
       icons: [
         {
@@ -47,9 +43,19 @@ export default defineNuxtConfig({
         },
       ],
     },
+    workbox: {
+      globPatterns: ['**/*.{json,ico,svg,ttf,woff,css,scss,js,html,txt,jpg,png,woff2,mjs,otf,ani}'],
+    },
     devOptions: {
       enabled: true,
+      suppressWarnings: true,
+      navigateFallback: '/',
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     },
+    client: {
+      installPrompt: true,
+    }
   },
   postcss: {
     plugins: {
