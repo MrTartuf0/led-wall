@@ -50,6 +50,12 @@
       <ion-button @click="clearBoard()">clear board</ion-button>
       <ion-button @click="sendJson()">send</ion-button>
 
+      <ion-input
+        v-model="baseURL"
+        placeholder="Put the Raspberry PI, ip address: ..."
+      ></ion-input>
+      
+
       <div class="flex">
         <ion-input
           v-model="myURL"
@@ -83,7 +89,7 @@ const gridStyle = {
   gridTemplateColumns: `repeat(${template.columns}, minmax(0, 1fr))`,
 };
 
-const baseURL = "http://192.168.178.51:3000";
+const baseURL = ref("http://150.0.95.80:3000");
 
 const myURL = ref(baseURL);
 const myResponse = ref();
@@ -157,7 +163,7 @@ async function clearBoard() {
   try {
     const response = await CapacitorHttp.request({
       method: "GET",
-      url: baseURL + "/clearBoard",
+      url: baseURL.value + "/clearBoard",
     });
 
     console.log(response);
@@ -173,7 +179,7 @@ async function sendJson() {
 
     const response = await CapacitorHttp.request({
       method: "POST",
-      url: baseURL + "/lightUpBoard",
+      url: baseURL.value + "/lightUpBoard",
       headers: {
         "Content-Type": "application/json",
       },
